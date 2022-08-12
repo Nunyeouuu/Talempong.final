@@ -4,7 +4,11 @@ import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { Button, Image } from "@rneui/themed";
 import { image } from "../utils/Constant";
 
-export const Menu = () => {
+
+export const Menu = (props) => {
+
+    const Nav = () => props.navigation.navigate('MainApp')
+
     return(
         <>
         <View>
@@ -16,7 +20,7 @@ export const Menu = () => {
                             <Image 
                             source={image.Info1}
                             style={styles.button}
-                            onPress={() => console.log(`help`)}/>
+                            onPress={Nav}/>
                         </View>
                         <View>
                             <Image 
