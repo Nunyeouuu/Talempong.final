@@ -13,7 +13,7 @@ const App = () => {
         name='Menu' 
         component={Menu}
         options={{ title: 'Main Menu'}}/>
-        <Stack.Screen name='MainApp' component={MainApp}/>
+        <Stack.Screen name='MainApp' component={MainApp}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );
