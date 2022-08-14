@@ -1,8 +1,10 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import Sound from "react-native-sound";
 import { sfx } from "../utils/Constant";
+import { image } from "../utils/Constant";
+
 
 
 export const MainApp = () => {
@@ -27,17 +29,49 @@ export const MainApp = () => {
 
     return(
         <>
-        <View>
-            <View>
-                <TouchableOpacity onPress={() => PlaySound(sfx._do)} style={{width: 100, height: 50, backgroundColor:'red'}}/>
-                <TouchableOpacity onPress={() => PlaySound(sfx.re)} style={{width: 100, height: 50, backgroundColor:'red'}}/>
-                <TouchableOpacity onPress={() => PlaySound(sfx.mi)} style={{width: 100, height: 50, backgroundColor:'red'}}/>
-                <TouchableOpacity onPress={() => PlaySound(sfx.fa)} style={{width: 100, height: 50, backgroundColor:'red'}}/>
+        <ImageBackground source={image.Bg_mainapp} style={styles.bg}>
+            <View >
+                <View style={styles.button_container}>
+                    <TouchableOpacity onPress={() => PlaySound(sfx._do)} style={styles.Button}/>
+                    <TouchableOpacity onPress={() => PlaySound(sfx.re)} style={styles.Button}/>
+                    <TouchableOpacity onPress={() => PlaySound(sfx.mi)} style={styles.Button}/>
+                    <TouchableOpacity onPress={() => PlaySound(sfx.fa)} style={styles.Button}/>
+                </View>
+                <View style={styles.button_container}>
+                    <TouchableOpacity onPress={() => PlaySound(sfx.sol)} style={styles.Button}/>
+                    <TouchableOpacity onPress={() => PlaySound(sfx.la)} style={styles.Button}/>
+                    <TouchableOpacity onPress={() => PlaySound(sfx.si)} style={styles.Button}/>
+                    <TouchableOpacity onPress={() => PlaySound(sfx.do1)} style={styles.Button}/>
+                
+                </View>
             </View>
-        </View>
+        </ImageBackground>
         </>
     );
 };
+
+const styles = StyleSheet.create ({
+    bg:{
+        width: null,
+        height: 387,
+        backgroundColor: 'green',
+    },
+
+    Button : {
+        width: 100, 
+        height: 100,
+        backgroundColor: 'blue',
+        borderColor: 'black', 
+        marginHorizontal: 5,
+        marginVertical: 30,
+        paddingVertical: 40,
+    },
+
+    button_container: {
+        flexDirection: "row",
+        justifyContent: 'space-evenly',
+    }
+})
 
 
 

@@ -5,6 +5,7 @@ import { Button, Image } from "@rneui/themed";
 import { image } from "../utils/Constant";
 
 
+
 export const Menu = (props) => {
 
     const Nav = () => props.navigation.navigate('MainApp')
@@ -13,12 +14,12 @@ export const Menu = (props) => {
         <>
         <View>
             <View style={{flex:1,}}>
-                <ImageBackground source={image.Background} style={styles.bg}>
+                <ImageBackground source={image.Bg_menu} style={styles.bg}>
                     <View style={{ justifyContent:"space-around", flexDirection:"row",
                     width: 650, height: 100, alignSelf: 'center', marginVertical: 175 }}> 
                         <View>
                             <Image 
-                            source={image.Info1}
+                            source={image.Start1}
                             style={styles.button}
                             onPress={Nav}/>
                         </View>
